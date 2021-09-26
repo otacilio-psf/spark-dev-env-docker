@@ -6,6 +6,4 @@ services:
     container_name: spark
     volumes: 
       - .:/opt/spark/work-dir
-    environment:
-      - PYSPARK_PYTHON=./environment/bin/python
     command: bash -c "sleep infinity"
