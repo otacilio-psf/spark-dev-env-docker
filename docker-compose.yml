@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  spark:
+    image: gcr.io/spark-operator/spark-py:v3.1.1
+    container_name: spark
+    volumes: 
+      - .:/opt/spark/work-dir
+    environment:
+      - PYSPARK_PYTHON=./environment/bin/python
+    command: bash -c "sleep infinity"
