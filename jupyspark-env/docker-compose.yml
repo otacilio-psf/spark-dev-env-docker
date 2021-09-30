@@ -1,9 +1,10 @@
 version: "3"
-
 services:
   spark:
-    image: gcr.io/spark-operator/spark-py:v3.1.1
-    container_name: spark
+    build: .
+    container_name: jupyspark
+    ports:
+      - "8888:8888"
     volumes: 
       - .:/opt/spark/work-dir
-    command: bash -c "sleep infinity"
+    command: bash -c "jupyter lab --port=8888 --ip=0.0.0.0 --no-browser --allow-root --notebook-dir=/opt/spark/work-dir --ServerApp.token=''"
