@@ -1,0 +1,1 @@
+docker exec -it jupyspark jupyter nbconvert $1 --to script

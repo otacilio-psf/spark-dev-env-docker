@@ -1,0 +1,1 @@
+docker exec -it jupyspark /opt/spark/bin/spark-submit $1
