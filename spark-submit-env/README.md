@@ -7,25 +7,14 @@ Using the spark-operator image to ensure it will be the same environment.
 ## Start container
 
 ```bash
-docker-compose up -d
+docker-compose up -d --build
 ```
 
-## Copy dependencies jars
+## Run spark-submit
 
 ```bash
-docker cp jars/. spark:/opt/spark/jars
-```
-
-## Create a local alias for spark-submit
-
-```bash
-alias spark-s="docker exec -it spark /opt/spark/bin/spark-submit"
-```
-
-## Run exemple
-
-```bash
-spark-s app_3.py
+# In your local machine
+sh ./sh/run-spark-s.sh app.py
 ```
 
 ## Clean after work
