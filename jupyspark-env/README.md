@@ -1,31 +1,33 @@
-# Local Spark Dev Env with Docker
+# Local JupySpark Dev Env with Docker
 
-Development environment for k8s.
+Development environment for k8s with jupyter lab.
 
 Using the spark-operator image to ensure it will be the same environment.
 
 ## Start container
 
 ```bash
-docker-compose up -d
+docker-compose up -d --build
 ```
 
-## Copy dependencies jars
+## Access JupyterLab via the link
+
+
+> [http://localhost:8888/lab](http://localhost:8888/lab)
+
+
+## Converting notebook to python script
 
 ```bash
-docker cp jars/. spark:/opt/spark/jars
+# In your local machine
+sh ./sh/notebook-to-py.sh app.ipynb
 ```
 
-## Create a local alias for spark-submit
+## Run with spark-submit
 
 ```bash
-alias spark-s="docker exec -it spark /opt/spark/bin/spark-submit"
-```
-
-## Run exemple
-
-```bash
-spark-s app_3.py
+# In your local machine
+sh ./sh/run-spark-s.sh app.py
 ```
 
 ## Clean after work
