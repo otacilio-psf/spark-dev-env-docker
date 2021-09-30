@@ -1,8 +1,7 @@
 version: "3"
-
 services:
   spark:
-    image: gcr.io/spark-operator/spark-py:v3.1.1
+    build: .
     container_name: spark
     volumes: 
       - .:/opt/spark/work-dir
