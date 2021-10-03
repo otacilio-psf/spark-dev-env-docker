@@ -4,32 +4,12 @@ Development environment for k8s.
 
 Using the spark-operator image to ensure it will be the same environment.
 
-## Start container
+## Modes
 
-```bash
-docker-compose up -d
-```
+You can choose to do your development on an interactive notebook with jupyter lab or run your script with spark-submit. 
 
-## Copy dependencies jars
+* With spark submit
+    * Use the tutorial inside spark-submit-dev
 
-```bash
-docker cp jars/. spark:/opt/spark/jars
-```
-
-## Create a local alias for spark-submit
-
-```bash
-alias spark-s="docker exec -it spark /opt/spark/bin/spark-submit"
-```
-
-## Run exemple
-
-```bash
-spark-s app_3.py
-```
-
-## Clean after work
-
-```bash
-docker-compose down
-```
+* With Jupyter Lab
+    * Use the tutorial inside jupyspark-env
