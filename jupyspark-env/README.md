@@ -7,6 +7,8 @@ Using the spark-operator image to ensure it will be the same environment.
 ## Start container
 
 ```bash
+docker-compose up -d
+# if you have change something in the Dockerfile
 docker-compose up -d --build
 ```
 
