@@ -1,4 +1,4 @@
-FROM datamechanics/spark:3.1.1-hadoop-3.2.0-java-11-scala-2.12-python-3.8-dm14
+FROM otaciliopsf/spark-py:v3.1.1-hadoop3.2-abfss-delta
 
 USER root:root
 
