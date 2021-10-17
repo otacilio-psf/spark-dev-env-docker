@@ -3,8 +3,8 @@ import os
 import time
 
 class SparkJob:
-    storage_name = "deepdivelake"
-    container_name = "data-lakehouse"
+    storage_name = "mystgaccount"
+    container_name = "mylakecontainer"
     path = f"abfss://{container_name}@{storage_name}.dfs.core.windows.net/"
     source = "us-500.csv"
     target = f"delta/bronze/{int(time.time())}"
