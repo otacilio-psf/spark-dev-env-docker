@@ -2,8 +2,6 @@
 
 Using a kubernetes image build to be ready for Azure Data Lake Storage Gen2 and Delta Lake.
 
-You can create your own spark image from source, the tutorial is inside `build-spark-image-from-source`
-
 # Creating k8s cluster with k3d
 
 [Install k3d](https://k3d.io/v5.0.1/#installation)
