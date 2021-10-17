@@ -15,7 +15,7 @@ docker push otaciliopsf/spark:v3.1.1-hadoop3.2
 
 docker push otaciliopsf/spark-py:v3.1.1-hadoop3.2
 
-# To add your dependencies, place them inside the jar folder and continue following the steps
+# To add your dependencies, place them inside the jars folder and continue following the steps
 
 cd ..
 

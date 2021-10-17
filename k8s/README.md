@@ -36,6 +36,20 @@ kubectl create secret generic job-example \
     --namespace spark-job
 ```
 
+or
+
+```
+kubectl create secret generic job-example \
+    --from-env-file=/.env
+    --namespace spark-job
+```
+
+## Role bing
+
+```
+kubectl apply -f manifests/crb-spark.yaml --namespace spark-job
+```
+
 ## SparkOperator
 
 [Install Helm](https://helm.sh/docs/intro/install/)
@@ -45,23 +59,27 @@ helm repo add spark-operator https://googlecloudplatform.github.io/spark-on-k8s-
 
 helm repo update
 
-helm install spark spark-operator/spark-operator --set image.tag=v1beta2-1.2.3-3.1.1 --namespace spark-job --set webhook.enable=true --set webhook.port=443
-```
-
-## Role bing
-
-```
-kubectl apply -f manifests/crb-spark.yaml --namespace spark-job
+helm install spark spark-operator/spark-operator --set image.tag=v1beta2-1.2.3-3.1.1 --namespace spark-job --set webhook.enable=true
 ```
 
 # Spark job
 
 ## Building job image
 
-```
-docker build . -t otaciliopsf/spark-py:job-example
+Change the MyRepository to your docker hub account
+* Is necessary to change the job manifest too
 
-docker push otaciliopsf/spark-py:job-example
+```
+spec:
+  image: "MyRepository/spark-py:job-example"
+```
+
+After change run
+
+```
+docker build . -t MyRepository/spark-py:job-example
+
+docker push MyRepository/spark-py:job-example
 ```
 
 ## Submit job
@@ -78,7 +96,7 @@ kubectl apply -f manifests/job-spark-exaple.yaml --namespace spark-job
 kubectl get sparkapplications job-example --namespace spark-job
 ```
 ```
-kubectl logs --follow pod/job-example-driver --namespace spark-job`
+kubectl logs --follow pod/job-example-driver --namespace spark-job
 ```
 ```
 kubectl get all --namespace spark-job

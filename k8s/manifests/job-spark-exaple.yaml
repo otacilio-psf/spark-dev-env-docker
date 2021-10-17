@@ -6,10 +6,13 @@ metadata:
 spec:
   type: Python
   mode: cluster
-  image: "otaciliopsf/spark-py:job-example"
+  image: "MyRepository/spark-py:job-example"
   imagePullPolicy: Always
   mainApplicationFile: "local:///opt/spark/work-dir/app.py"
   sparkVersion: "3.1.1"
+  sparkConf:
+    "spark.sql.extensions": "io.delta.sql.DeltaSparkSessionExtension"
+    "spark.sql.catalog.spark_catalog": "org.apache.spark.sql.delta.catalog.DeltaCatalog"
   restartPolicy:
     type: OnFailure
     onFailureRetries: 3

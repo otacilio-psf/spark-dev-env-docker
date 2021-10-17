@@ -1,6 +1,6 @@
 # Local Spark Dev Env with Docker
 
-Development environment for k8s.
+Development environment for kubernetes, spark-submit and jupyter notebook
 
 Using a kubernetes image build to be ready for Azure Data Lake Storage Gen2 and Delta Lake.
 
