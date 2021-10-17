@@ -1,0 +1,14 @@
+apiVersion: k3d.io/v1alpha2
+kind: Simple
+name: spark-cluster
+servers: 1
+agents: 2
+image: rancher/k3s:v1.20.9-k3s1
+ports:
+  - port: 8080:30000
+    nodeFilters:
+      - agent[0] #loadbalancer
+
+options:
+  k3d: # k3d runtime settings
+    disableLoadbalancer: true

@@ -3,6 +3,8 @@ services:
   spark:
     build: .
     container_name: spark
+    env_file:
+      - .env
     volumes: 
       - .:/opt/spark/work-dir
     command: bash -c "sleep infinity"

@@ -2,7 +2,7 @@
 
 Development environment for k8s with jupyter lab.
 
-Using the spark-operator image to ensure it will be the same environment.
+Using a kubernetes image build to be ready for Azure Data Lake Storage Gen2 and Delta Lake.
 
 ## Start container
 

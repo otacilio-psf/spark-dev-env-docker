@@ -1,7 +1,7 @@
-FROM gcr.io/spark-operator/spark-py:v3.1.1
+FROM otaciliopsf/spark-py:v3.1.1-hadoop3.2-abfss-delta
 
-USER root:root
+USER root
 
 COPY ./jars/ /opt/spark/jars
 
-USER 1001
+USER 185
