@@ -10,11 +10,11 @@ You can create your own spark image from source, the tutorial is inside `build-s
 
 You can choose to do your development on an interactive notebook with jupyter lab, run your script with spark-submit or submit your job to a local Kubernetes. 
 
-* With spark submit
+* With spark submit `cd spark-submit-env`
     * Use the tutorial inside spark-submit-dev
 
-* With Jupyter Lab
+* With Jupyter Lab `cd jupyspark-env`
     * Use the tutorial inside jupyspark-env
 
-* With Kubernetes cluster
+* With Kubernetes cluster `cd k8s`
     * Use the tutorial inside k8s
